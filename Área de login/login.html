@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="logo.png" alt="Nome da Empresa">
     <title>Casa das Empreiteiras | Site oficial no Brasil</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="logo.png">
 </head>
 <body>
 
@@ -19,8 +21,21 @@
             </ul>
 
             <button class="login-button"><a href="../Área de login/login.html">Login</a></button>
-            <button class="register-button"><a href="../Área de cadastro/cadastro.html">Cadastrar</a></button>
+            <button class="cadastro-button"><a href="../Área de cadastro/cadastro.html">Cadastrar</a></button>
     </header>
+
+    <main class="container">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="login.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
         </div>
     
 </body>
