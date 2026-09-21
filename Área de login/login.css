@@ -2,7 +2,7 @@ body {
     width: 100%;
     background-color: #1A1A1A;
     font-family: inherit;
-    overflow: hidden;
+    overflow-x: hidden;
     background-image: url(login-cadastro-fundo.png);
     background-size: cover;
     background-position: center;
@@ -75,7 +75,6 @@ padding: 20px 20px;
 height: 415px;
 margin: 0 auto;
 margin-top: 125px;
-align-items: center;
 text-align: center;
 background-color: #1e2022;
 border-radius: 5px;
@@ -129,14 +128,13 @@ button:hover {
 }
 
 .footer {
-    width: 100%;
-    height: 50px;
-    margin-top: 2000px;
-    background-color: #1e2022;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+width: 25%;
+padding: 20px 20px;
+height: 415px;
+margin: 0 auto;
+margin-top: 125px;
+text-align: center;
+background-color: #1e2022;
+border-radius: 5px;
+color: rgb(255, 255, 255);
 }
