@@ -296,3 +296,265 @@ header ul, li{
 .footer-links a:hover {
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+
+    .header {
+        height: 70px;
+        padding: 0 8px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    .header #logo {
+        width: 50px;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .header-links {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        min-width: 0;
+    }
+
+    header ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 2px;
+    }
+
+    header li {
+        font-size: 11px;
+        margin-left: 2px;
+        padding: 4px 3px;
+        white-space: nowrap;
+    }
+
+    .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .header button {
+        width: 62px;
+        height: 30px;
+        margin-top: 0;
+        font-size: 10px;
+        padding: 0;
+    }
+
+    .header .login-button {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .banner {
+        height: 450px;
+        margin-top: 70px;
+        background-position: center;
+    }
+
+    .banner-conteudo {
+        left: 7%;
+        right: 7%;
+        top: 50%;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+        margin-bottom: 18px;
+    }
+
+    .banner h1 span {
+        font-size: 25px;
+    }
+
+    .banner p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .banner button {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    .categorias {
+        height: auto;
+        min-height: 90px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 10px 0;
+    }
+
+    .categoria {
+        width: 100%;
+        height: 60px;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    .categoria:nth-child(2) {
+        border-right: none;
+    }
+
+    .categoria:nth-child(3),
+    .categoria:nth-child(4) {
+        border-top: 1px solid #555;
+    }
+
+    .categoria:nth-child(4) {
+        border-right: none;
+    }
+
+    .categoria span {
+        font-size: 20px;
+    }
+
+    .categoria p {
+        font-size: 12px;
+    }
+
+    .historia {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        margin: 60px auto;
+    }
+
+    .historia-texto {
+        width: 100%;
+    }
+
+    .historia-texto span {
+        font-size: 12px;
+    }
+
+    .historia-texto h2 {
+        font-size: 30px;
+        margin: 10px 0 20px;
+    }
+
+    .historia-texto p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .historia-imagem {
+        width: 100%;
+    }
+
+    .historia-imagem img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .footer-main {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        font-size: 11px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .header {
+        height: 65px;
+        padding: 0 5px;
+        gap: 2px;
+    }
+
+    .header #logo {
+        width: 43px;
+    }
+
+    header ul {
+        gap: 3px;
+    }
+
+    header li {
+        font-size: 11px;
+        margin-left: 1px;
+        padding: 3px 2px;
+    }
+
+    .header-buttons {
+        gap: 2px;
+    }
+
+    .header button {
+        width: 55px;
+        height: 28px;
+        font-size: 9px;
+    }
+
+    .banner {
+        margin-top: 65px;
+        height: 420px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner h1 span {
+        font-size: 21px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+
+    .banner button {
+        padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .categoria p {
+        font-size: 11px;
+    }
+
+    .historia-texto h2 {
+        font-size: 27px;
+    }
+
+    .historia-texto p {
+        font-size: 14px;
+    }
+
+    .historia-imagem img {
+        height: 250px;
+    }
+}
