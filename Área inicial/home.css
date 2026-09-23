@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-position: center -950px; 
     background-size: 1400px auto;
+    margin: 0;
 }
 
 .header {
@@ -57,14 +58,79 @@ header ul, li{
     text-decoration: none;
 }
 
-.header a{
+.header-links a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+}
+
+.header-buttons a{
+    text-decoration: none;
+    color: rgb(3, 3, 3);
 }
 
 .header li:hover{
     border-bottom: 3px solid #FFC300;
     transition: 0.5s;
+}
+
+.banner {
+    height: 535px;
+    background-image: url("banner-inicial.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 100px;
+}
+
+.banner-conteudo {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.banner h1 {
+    font-family: Arial, sans-serif;
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 0 0 25px 0;
+    color: #ffd000;
+}
+
+.banner h1 span {
+    display: block;
+    color: white;
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+.banner p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin: 0 0 30px;
+}
+
+.banner button {
+    background-color: #ffd000;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 40px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.banner button:hover {
+    background-color: #ffc300;
+    transform: scale(1.05);
+}
+
+.banner a {
+    text-decoration: none;
+    color: black;
 }
 
 .footer {
