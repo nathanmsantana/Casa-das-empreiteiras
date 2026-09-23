@@ -33,9 +33,11 @@
     <main class="container">
         
         <div class="texto"
-        <h4>Envie um e-mail explicando o problema e informe:<br>
+        <h2>Envie o formulário explicando o problema e informe:<br>
 
 Nome completo<br>
+
+Email<br>
 
 Telefone/WhatsApp<br>
 
@@ -50,16 +52,26 @@ Descrição detalhada do problema<br>
 Quantidade de produtos afetados<br>
 
 Fotos ou vídeos do problema (se possível)<br>
-            </h4>
+            </h2>
         <form>
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome">
+
+    <label for="Whatsapp">WhatsApp:</label>
+    <input type="tel" id="Whatsapp" name="Whatsapp">
 
     <label for="email">E-mail:</label>
     <input type="email" id="email" name="email">
 
     <label for="mensagem">Mensagem:</label>
     <textarea id="mensagem" name="mensagem"></textarea>
+
+    <label for="fotos">Fotos ou vídeos do problema:</label>
+<input type="file" id="fotos" name="fotos" accept="image/*,video/*" multiple>
+
+
+
+
 
     <button type="submit">Enviar</button>
 </form>
