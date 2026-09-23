@@ -351,11 +351,6 @@ header ul, li{
         padding: 0;
     }
 
-    .header .login-button {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
     .banner {
         height: 450px;
         margin-top: 70px;
