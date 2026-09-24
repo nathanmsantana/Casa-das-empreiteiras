@@ -125,7 +125,12 @@ button:hover {
   background: #d3a201;
 }
 
-.container a {
+.cadastro-button a{
+    text-decoration: none;
+    color: rgb(3, 3, 3);
+}
+
+.tenho-conta a {
   margin-top: 5px;
   color: #2563EB;
 }
