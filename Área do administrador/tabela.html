@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Administrador | Casa das Empreiteiras</title>
-    <link rel="stylesheet" href="adm.css">
+    <title>Área de tabela do Administrador | Casa das Empreiteiras</title>
+    <link rel="stylesheet" href="tabela.css">
     <link rel="icon" href="logo2.png">
 </head>
 
@@ -31,6 +31,55 @@
             <button class="cadastro-button"><a href="../Área de cadastro/cadastro.html">Cadastrar</a></button>
             </div>
     </header>
+
+<section class="tabela-ADM">
+
+    <h2>Tabela do Administrador</h2>
+
+    <div class="campos">
+
+        <input type="text" id="nome" placeholder="Nome do produto">
+
+        <select id="categoria">
+            <option value="">Categoria</option>
+            <option value="Construção">Divisão de Construção</option>
+            <option value="Elétrica">Divisão de Elétrica</option>
+            <option value="Encanamento">Divisão de Encanamento</option>
+        </select>
+
+        <input type="text" id="modelo" placeholder="Modelo">
+
+        <input type="number" id="preco" placeholder="Preço">
+
+        <input type="number" id="estoque" placeholder="Estoque">
+
+    </div>
+
+    <button id="botao">Adicionar produto</button>
+
+    <p id="quantidade">Quantidade de produtos: 0</p>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Modelo</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela-produto">
+        </tbody>
+
+    </table>
+
+</section>
+
+<script src="tabela.js"></script>
 
     <div class="footer">
  <div class="footer-main">
@@ -85,7 +134,7 @@
     </div>
 </div>
 
-<script src="adm.js"></script>
+<script src="tabela.js"></script>
 
 </body>
 </html>
