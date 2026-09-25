@@ -5,97 +5,86 @@ const areaUsuario = document.getElementById("areaUsuario");
 
 categorias.addEventListener("change", function() {
 
-const categoriaEscolhida = categorias.value;
+    const categoriaEscolhida = categorias.value;
 
-for (let i = 0; i < produtos.length; i++) {
+    for (let i = 0; i < produtos.length; i++) {
 
-    const categoriaProduto = produtos[i].getAttribute("data-categoria");
+        const categoriaProduto = produtos[i].getAttribute("data-categoria");
 
-    if (categoriaEscolhida == "todos" || categoriaProduto == categoriaEscolhida) {
-        produtos[i].style.display = "block";
-    } else {
-        produtos[i].style.display = "none";
+        if (categoriaEscolhida == "todos" || categoriaProduto == categoriaEscolhida) {
+            produtos[i].style.display = "block";
+        } else {
+            produtos[i].style.display = "none";
+        }
     }
-}
 
 });
 
-const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-for (let i = 0; i < produtosSalvos.length; i++) {
+const proximoProduto = Number(localStorage.getItem("proximoProduto")) || 0;
 
-const produto = produtosSalvos[i];
+for (let i = 0; i < proximoProduto; i++) {
 
-const novoProduto = document.createElement("div");
-novoProduto.classList.add("produto-info");
-novoProduto.setAttribute("data-categoria", produto.categoria);
+    const nomeProduto = localStorage.getItem("produto_" + i + "_nome");
 
-const imagem = document.createElement("img");
-imagem.src = "../Área do administrador/logo.png";
-imagem.alt = produto.nome;
+    if (nomeProduto == null) {
+        continue;
+    }
 
-const nome = document.createElement("h2");
-nome.textContent = produto.nome;
+    const categoriaProduto = localStorage.getItem("produto_" + i + "_categoria");
+    const modeloProduto = localStorage.getItem("produto_" + i + "_modelo");
+    const precoProduto = localStorage.getItem("produto_" + i + "_preco");
+    const estoqueProduto = localStorage.getItem("produto_" + i + "_estoque");
 
-const modelo = document.createElement("p");
-modelo.textContent = "Modelo: " + produto.modelo;
+    const novoProduto = document.createElement("div");
+    novoProduto.classList.add("produto-info");
+    novoProduto.setAttribute("data-categoria", categoriaProduto);
 
-const preco = document.createElement("h3");
-preco.textContent = "R$ " + produto.preco;
+    const imagem = document.createElement("img");
+    imagem.src = "../Área do administrador/logo.png";
+    imagem.alt = nomeProduto;
 
-const estoque = document.createElement("div");
-estoque.classList.add("estoque");
+    const nome = document.createElement("h2");
+    nome.textContent = nomeProduto;
 
-if (produto.estoque >= 100) {
+    const modelo = document.createElement("p");
+    modelo.textContent = "Modelo: " + modeloProduto;
 
-    estoque.classList.add("estoque-alto");
-    estoque.textContent = "Estoque: " + produto.estoque;
+    const preco = document.createElement("h3");
+    preco.textContent = "R$ " + precoProduto;
 
-} else if (produto.estoque >= 30) {
+    const estoque = document.createElement("div");
+    estoque.classList.add("estoque");
 
-    estoque.classList.add("estoque-medio");
-    estoque.textContent = "Estoque: " + produto.estoque;
+    if (Number(estoqueProduto) >= 100) {
+        estoque.classList.add("estoque-alto");
+    } else if (Number(estoqueProduto) >= 30) {
+        estoque.classList.add("estoque-medio");
+    } else if (Number(estoqueProduto) >= 1) {
+        estoque.classList.add("estoque-baixo");
+    } else {
+        estoque.classList.add("estoque-zero");
+    }
 
-} else if (produto.estoque >= 1) {
+    if (Number(estoqueProduto) > 0) {
+        estoque.textContent = "Estoque: " + estoqueProduto;
+    } else {
+        estoque.textContent = "Acabou o estoque";
+    }
 
-    estoque.classList.add("estoque-baixo");
-    estoque.textContent = "Estoque: " + produto.estoque;
+    const botao = document.createElement("button");
+    botao.textContent = "Comprar";
 
-} else {
+    novoProduto.appendChild(imagem);
+    novoProduto.appendChild(nome);
+    novoProduto.appendChild(modelo);
+    novoProduto.appendChild(preco);
+    novoProduto.appendChild(estoque);
+    novoProduto.appendChild(botao);
 
-    estoque.classList.add("estoque-zero");
-    estoque.textContent = "Acabou o estoque";
-
+    listaProdutos.appendChild(novoProduto);
 }
 
-const botao = document.createElement("button");
-botao.textContent = "Comprar";
-
-botao.addEventListener("click", function() {
-
-    const produtoCompra = {
-        nome: produto.nome,
-        modelo: produto.modelo,
-        preco: produto.preco,
-        estoque: produto.estoque
-    };
-
-    localStorage.setItem("produtoCompra", JSON.stringify(produtoCompra));
-
-    window.location.href = "../Área de pagamento/pagamento.html";
-
-});
-
-novoProduto.appendChild(imagem);
-novoProduto.appendChild(nome);
-novoProduto.appendChild(modelo);
-novoProduto.appendChild(preco);
-novoProduto.appendChild(estoque);
-novoProduto.appendChild(botao);
-
-listaProdutos.appendChild(novoProduto);
-
-}
 
 const botoesComprar = document.querySelectorAll(".produto-info button");
 
@@ -106,9 +95,7 @@ for (let i = 0; i < botoesComprar.length; i++) {
         const produto = botoesComprar[i].parentElement;
 
         const nomeProduto = produto.getElementsByTagName("h2")[0].textContent;
-
         const modeloProduto = produto.getElementsByTagName("p")[0].textContent.replace("Modelo: ", "");
-
         const precoProduto = produto.getElementsByTagName("h3")[0].textContent
             .replace("R$ ", "")
             .replace(",", ".");
@@ -121,14 +108,10 @@ for (let i = 0; i < botoesComprar.length; i++) {
             estoqueProduto = 0;
         }
 
-        const produtoCompra = {
-            nome: nomeProduto,
-            modelo: modeloProduto,
-            preco: precoProduto,
-            estoque: estoqueProduto
-        };
-
-        localStorage.setItem("produtoCompra", JSON.stringify(produtoCompra));
+        localStorage.setItem("produtoCompra_nome", nomeProduto);
+        localStorage.setItem("produtoCompra_modelo", modeloProduto);
+        localStorage.setItem("produtoCompra_preco", precoProduto);
+        localStorage.setItem("produtoCompra_estoque", estoqueProduto);
 
         window.location.href = "../Área de pagamento/pagamento.html";
 
@@ -136,34 +119,28 @@ for (let i = 0; i < botoesComprar.length; i++) {
 
 }
 
+
 if (localStorage.getItem("adminLogado") === "true") {
 
-areaUsuario.innerHTML = `
-    <div class="perfil-admin">
+    areaUsuario.innerHTML = `
+        <div class="perfil-admin">
+            <img src="../Área do administrador/logo2.png" class="foto-admin">
 
-        <img src="../Área do administrador/logo2.png" class="foto-admin">
+            <div class="menu-perfil">
+                <a href="../Área do administrador/adm.html">
+                    Entrar na área de administrador
+                </a>
 
-        <div class="menu-perfil">
-
-            <a href="../Área do administrador/adm.html">
-                Entrar na área de administrador
-            </a>
-
-            <button id="sairPerfil">
-                Sair do perfil
-            </button>
-
+                <button id="sairPerfil">
+                    Sair do perfil
+                </button>
+            </div>
         </div>
+    `;
 
-    </div>
-`;
-
-document.getElementById("sairPerfil").addEventListener("click", function() {
-
-    localStorage.removeItem("adminLogado");
-    location.reload();
-
-});
+    document.getElementById("sairPerfil").addEventListener("click", function() {
+        localStorage.removeItem("adminLogado");
+        location.reload();
+    });
 
 }
-

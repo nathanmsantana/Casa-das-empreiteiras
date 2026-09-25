@@ -14,247 +14,234 @@ const tabelaProduto = document.getElementById("tabela-produto");
 
 btnAdicionar.addEventListener("click", adicionarProduto);
 
+
 function adicionarProduto() {
 
-const nomeProduto = nome.value;
-const categoriaProduto = categoria.value;
-const modeloProduto = modelo.value;
-const precoProduto = preco.value;
-const estoqueProduto = estoque.value;
+    const nomeProduto = nome.value;
+    const categoriaProduto = categoria.value;
+    const modeloProduto = modelo.value;
+    const precoProduto = preco.value;
+    const estoqueProduto = estoque.value;
 
-if (nomeProduto == "" || categoriaProduto == "" || modeloProduto == "" || precoProduto == "" || estoqueProduto == "") {
-    alert("Preencha todos os campos.");
-    return;
-}
-
-let categoriaSalva = "";
-
-if (categoriaProduto == "Construção") {
-    categoriaSalva = "construcao";
-}
-
-if (categoriaProduto == "Elétrica") {
-    categoriaSalva = "eletrica";
-}
-
-if (categoriaProduto == "Hidráulica") {
-    categoriaSalva = "hidraulica";
-}
-
-const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-
-if (produtoEditando == null) {
-
-    produtosSalvos.push({
-        id: Date.now(),
-        nome: nomeProduto,
-        categoria: categoriaSalva,
-        modelo: modeloProduto,
-        preco: precoProduto,
-        estoque: estoqueProduto,
-        imagem: "logo.png"
-    });
-
-} else {
-
-    for (let i = 0; i < produtosSalvos.length; i++) {
-
-        if (produtosSalvos[i].id == produtoEditando) {
-
-            produtosSalvos[i].nome = nomeProduto;
-            produtosSalvos[i].categoria = categoriaSalva;
-            produtosSalvos[i].modelo = modeloProduto;
-            produtosSalvos[i].preco = precoProduto;
-            produtosSalvos[i].estoque = estoqueProduto;
-            produtosSalvos[i].imagem = "logo.png";
-
-        }
-
+    if (nomeProduto == "" || categoriaProduto == "" || modeloProduto == "" || precoProduto == "" || estoqueProduto == "") {
+        alert("Preencha todos os campos.");
+        return;
     }
 
-    produtoEditando = null;
+    let categoriaSalva = "";
+
+    if (categoriaProduto == "Construção") {
+        categoriaSalva = "construcao";
+    }
+
+    if (categoriaProduto == "Elétrica") {
+        categoriaSalva = "eletrica";
+    }
+
+    if (categoriaProduto == "Hidráulica") {
+        categoriaSalva = "hidraulica";
+    }
+
+
+    if (produtoEditando == null) {
+
+        let proximoProduto = Number(localStorage.getItem("proximoProduto")) || 0;
+
+        localStorage.setItem("produto_" + proximoProduto + "_nome", nomeProduto);
+        localStorage.setItem("produto_" + proximoProduto + "_categoria", categoriaSalva);
+        localStorage.setItem("produto_" + proximoProduto + "_modelo", modeloProduto);
+        localStorage.setItem("produto_" + proximoProduto + "_preco", precoProduto);
+        localStorage.setItem("produto_" + proximoProduto + "_estoque", estoqueProduto);
+        localStorage.setItem("produto_" + proximoProduto + "_imagem", "logo.png");
+
+        proximoProduto++;
+
+        localStorage.setItem("proximoProduto", proximoProduto);
+
+    } else {
+
+        localStorage.setItem("produto_" + produtoEditando + "_nome", nomeProduto);
+        localStorage.setItem("produto_" + produtoEditando + "_categoria", categoriaSalva);
+        localStorage.setItem("produto_" + produtoEditando + "_modelo", modeloProduto);
+        localStorage.setItem("produto_" + produtoEditando + "_preco", precoProduto);
+        localStorage.setItem("produto_" + produtoEditando + "_estoque", estoqueProduto);
+        localStorage.setItem("produto_" + produtoEditando + "_imagem", "logo.png");
+
+        produtoEditando = null;
+    }
+
+    carregarProdutos();
+
+    nome.value = "";
+    categoria.value = "";
+    modelo.value = "";
+    preco.value = "";
+    estoque.value = "";
+
+    nome.focus();
 }
 
-localStorage.setItem("produtos", JSON.stringify(produtosSalvos));
-
-carregarProdutos();
-
-nome.value = "";
-categoria.value = "";
-modelo.value = "";
-preco.value = "";
-estoque.value = "";
-
-nome.focus();
-
-}
 
 function atualizarQuantidade() {
 
-quantidade.textContent = "Quantidade de produtos: " + totalProdutos;
+    quantidade.textContent = "Quantidade de produtos: " + totalProdutos;
 
 }
+
 
 function carregarProdutos() {
 
-tabelaProduto.innerHTML = "";
-totalProdutos = 0;
+    tabelaProduto.innerHTML = "";
+    totalProdutos = 0;
 
-const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
+    const proximoProduto = Number(localStorage.getItem("proximoProduto")) || 0;
 
-for (let i = 0; i < produtosSalvos.length; i++) {
+    for (let i = 0; i < proximoProduto; i++) {
 
-    const produto = produtosSalvos[i];
+        const nomeProduto = localStorage.getItem("produto_" + i + "_nome");
 
-    if (!produto.id) {
-        produto.id = Date.now() + i;
-    }
-
-    if (!produto.imagem) {
-        produto.imagem = "logo.png";
-    }
-
-    const linha = document.createElement("tr");
-
-    const colunaNome = document.createElement("td");
-    colunaNome.textContent = produto.nome;
-
-    const colunaCategoria = document.createElement("td");
-
-    if (produto.categoria == "construcao") {
-        colunaCategoria.textContent = "Construção";
-    }
-
-    if (produto.categoria == "eletrica") {
-        colunaCategoria.textContent = "Elétrica";
-    }
-
-    if (produto.categoria == "hidraulica") {
-        colunaCategoria.textContent = "Hidráulica";
-    }
-
-    const colunaModelo = document.createElement("td");
-    colunaModelo.textContent = produto.modelo;
-
-    const colunaPreco = document.createElement("td");
-    colunaPreco.textContent = "R$ " + produto.preco;
-
-    const colunaEstoque = document.createElement("td");
-    colunaEstoque.textContent = produto.estoque;
-
-    const colunaAcao = document.createElement("td");
-
-    const btnEditar = document.createElement("button");
-    btnEditar.textContent = "Editar";
-    btnEditar.classList.add("editar");
-
-    const btnExcluir = document.createElement("button");
-    btnExcluir.textContent = "Excluir";
-    btnExcluir.classList.add("excluir");
-
-
-    btnEditar.addEventListener("click", function() {
-
-        nome.value = produto.nome;
-        modelo.value = produto.modelo;
-        preco.value = produto.preco;
-        estoque.value = produto.estoque;
-
-        if (produto.categoria == "construcao") {
-            categoria.value = "Construção";
+        if (nomeProduto == null) {
+            continue;
         }
 
-        if (produto.categoria == "eletrica") {
-            categoria.value = "Elétrica";
+        const categoriaProduto = localStorage.getItem("produto_" + i + "_categoria");
+        const modeloProduto = localStorage.getItem("produto_" + i + "_modelo");
+        const precoProduto = localStorage.getItem("produto_" + i + "_preco");
+        const estoqueProduto = localStorage.getItem("produto_" + i + "_estoque");
+
+        const linha = document.createElement("tr");
+
+        const colunaNome = document.createElement("td");
+        colunaNome.textContent = nomeProduto;
+
+        const colunaCategoria = document.createElement("td");
+
+        if (categoriaProduto == "construcao") {
+            colunaCategoria.textContent = "Construção";
         }
 
-        if (produto.categoria == "hidraulica") {
-            categoria.value = "Hidráulica";
+        if (categoriaProduto == "eletrica") {
+            colunaCategoria.textContent = "Elétrica";
         }
 
-        produtoEditando = produto.id;
+        if (categoriaProduto == "hidraulica") {
+            colunaCategoria.textContent = "Hidráulica";
+        }
 
-        nome.focus();
+        const colunaModelo = document.createElement("td");
+        colunaModelo.textContent = modeloProduto;
 
-    });
+        const colunaPreco = document.createElement("td");
+        colunaPreco.textContent = "R$ " + precoProduto;
+
+        const colunaEstoque = document.createElement("td");
+        colunaEstoque.textContent = estoqueProduto;
+
+        const colunaAcao = document.createElement("td");
+
+        const btnEditar = document.createElement("button");
+        btnEditar.textContent = "Editar";
+        btnEditar.classList.add("editar");
+
+        const btnExcluir = document.createElement("button");
+        btnExcluir.textContent = "Excluir";
+        btnExcluir.classList.add("excluir");
 
 
-    btnExcluir.addEventListener("click", function() {
+        btnEditar.addEventListener("click", function() {
 
-        const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
+            nome.value = nomeProduto;
+            modelo.value = modeloProduto;
+            preco.value = precoProduto;
+            estoque.value = estoqueProduto;
 
-        for (let j = 0; j < produtosSalvos.length; j++) {
-
-            if (produtosSalvos[j].id == produto.id) {
-                produtosSalvos.splice(j, 1);
-                break;
+            if (categoriaProduto == "construcao") {
+                categoria.value = "Construção";
             }
 
-        }
+            if (categoriaProduto == "eletrica") {
+                categoria.value = "Elétrica";
+            }
 
-        localStorage.setItem("produtos", JSON.stringify(produtosSalvos));
+            if (categoriaProduto == "hidraulica") {
+                categoria.value = "Hidráulica";
+            }
 
-        produtoEditando = null;
+            produtoEditando = i;
 
-        carregarProdutos();
+            nome.focus();
 
-    });
+        });
 
 
-    colunaAcao.appendChild(btnEditar);
-    colunaAcao.appendChild(btnExcluir);
+        btnExcluir.addEventListener("click", function() {
 
-    linha.appendChild(colunaNome);
-    linha.appendChild(colunaCategoria);
-    linha.appendChild(colunaModelo);
-    linha.appendChild(colunaPreco);
-    linha.appendChild(colunaEstoque);
-    linha.appendChild(colunaAcao);
+            localStorage.removeItem("produto_" + i + "_nome");
+            localStorage.removeItem("produto_" + i + "_categoria");
+            localStorage.removeItem("produto_" + i + "_modelo");
+            localStorage.removeItem("produto_" + i + "_preco");
+            localStorage.removeItem("produto_" + i + "_estoque");
+            localStorage.removeItem("produto_" + i + "_imagem");
 
-    tabelaProduto.appendChild(linha);
+            produtoEditando = null;
 
-    totalProdutos++;
+            carregarProdutos();
+
+        });
+
+
+        colunaAcao.appendChild(btnEditar);
+        colunaAcao.appendChild(btnExcluir);
+
+        linha.appendChild(colunaNome);
+        linha.appendChild(colunaCategoria);
+        linha.appendChild(colunaModelo);
+        linha.appendChild(colunaPreco);
+        linha.appendChild(colunaEstoque);
+        linha.appendChild(colunaAcao);
+
+        tabelaProduto.appendChild(linha);
+
+        totalProdutos++;
+    }
+
+    atualizarQuantidade();
 
 }
 
-localStorage.setItem("produtos", JSON.stringify(produtosSalvos));
-
-atualizarQuantidade();
-
-}
 
 carregarProdutos();
+
 
 const areaUsuario = document.getElementById("areaUsuario");
 
 if (localStorage.getItem("adminLogado") === "true") {
 
-areaUsuario.innerHTML = `
-    <div class="perfil-admin">
+    areaUsuario.innerHTML = `
+        <div class="perfil-admin">
 
-        <img src="../Área do administrador/logo2.png" class="foto-admin">
+            <img src="../Área do administrador/logo2.png" class="foto-admin">
 
-        <div class="menu-perfil">
+            <div class="menu-perfil">
 
-            <a href="../Área do administrador/adm.html">
-                Entrar na área de administrador
-            </a>
+                <a href="../Área do administrador/adm.html">
+                    Entrar na área de administrador
+                </a>
 
-            <button id="sairPerfil">
-                Sair do perfil
-            </button>
+                <button id="sairPerfil">
+                    Sair do perfil
+                </button>
+
+            </div>
 
         </div>
+    `;
 
-    </div>
-`;
+    document.getElementById("sairPerfil").addEventListener("click", function() {
 
-document.getElementById("sairPerfil").addEventListener("click", function() {
+        localStorage.removeItem("adminLogado");
+        location.reload();
 
-    localStorage.removeItem("adminLogado");
-    location.reload();
-
-});
+    });
 
 }
