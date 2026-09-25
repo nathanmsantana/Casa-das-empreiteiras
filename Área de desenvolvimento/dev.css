@@ -253,51 +253,35 @@ header ul, li{
 
     .header {
         height: 80px;
-        padding: 0 15px;
-        box-sizing: border-box;
     }
 
     .header #logo {
         width: 65px;
-        margin-left: 5px;
+        margin-left: 10px;
     }
 
     .header-links {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-    }
-
-    header ul {
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        margin: 0;
-        padding: 0;
-    }
-
-    header li {
-        font-size: 13px;
-        margin-left: 3px;
-        padding: 4px;
+        margin-left: 5px;
     }
 
     .header-buttons {
+        margin-left: auto;
+        margin-right: 10px;
         display: flex;
         align-items: center;
-        gap: 6px;
-        margin: 0;
-    }
-
-    .header button {
-        width: 80px;
-        height: 35px;
-        margin: 0;
-        font-size: 12px;
+        gap: 8px;
     }
 
     .header .login-button {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .header button {
+        width: 90px;
+        height: 38px;
+        margin-bottom: 0;
+        font-size: 14px;
     }
 
     .box {
@@ -305,7 +289,7 @@ header ul, li{
         max-width: 550px;
         height: auto;
         min-height: 300px;
-        margin: 100px auto;
+        margin: 70px auto;
         padding-bottom: 20px;
         box-sizing: border-box;
     }
@@ -315,101 +299,115 @@ header ul, li{
     }
 
     .box h1 {
-        font-size: 22px;
+        font-size: 23px;
     }
 
     .box p {
         font-size: 15px;
-        padding: 0 20px;
     }
 
     .footer {
-        width: auto;
-        padding: 30px;
+        width: 90%;
+        padding: 30px 5%;
+        box-sizing: border-box;
         margin-top: 150px;
     }
 
     .footer-main {
-        flex-wrap: wrap;
         gap: 50px;
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
+    .foto-admin {
+        width: 55px;
+        height: 55px;
+        margin-left: 0;
     }
 
-    .footer-links {
-        flex-wrap: wrap;
-        gap: 15px;
+    .menu-perfil {
+        top: 60px;
     }
-
 }
 
 @media (max-width: 768px) {
 
     .header {
-        height: 70px;
-        padding: 0 6px;
+        height: 65px;
     }
 
     .header #logo {
-        width: 50px;
-        margin-left: 2px;
+        width: 45px;
+        margin-left: 8px;
     }
 
     .header-links {
-        flex: 1;
-    }
-
-    header ul {
-        gap: 0;
-    }
-
-    header li {
-        font-size: 10px;
-        margin-left: 0;
-        padding: 2px;
+        display: none;
     }
 
     .header-buttons {
-        gap: 3px;
+        margin-left: auto;
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .header .login-button {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .header button {
-        width: 58px;
-        height: 30px;
-        font-size: 9px;
+        width: 75px;
+        height: 32px;
+        margin-bottom: 0;
+        font-size: 12px;
     }
 
     .box {
-        width: 85%;
-        min-height: 300px;
-        margin: 80px auto;
-        padding-bottom: 20px;
+        width: 90%;
+        height: auto;
+        min-height: 280px;
+        margin: 40px auto;
+        padding: 10px 15px 20px;
+        box-sizing: border-box;
     }
 
     .box img {
         width: 110px;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .box h1 {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .box p {
         font-size: 14px;
-        padding: 0 15px;
+        margin: 10px 10px 20px;
     }
 
     .box button {
-        width: 85%;
+        width: 90%;
+        height: 40px;
+    }
+
+    .foto-admin {
+        width: 45px;
+        height: 45px;
+        margin-left: 0;
+        margin-right: 5px;
+    }
+
+    .menu-perfil {
+        top: 50px;
+        right: 5px;
+        width: 200px;
     }
 
     .footer {
-        width: auto;
-        padding: 25px 20px;
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
         margin-top: 100px;
     }
 
@@ -420,16 +418,11 @@ header ul, li{
 
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .social-icons {
         flex-wrap: wrap;
+        gap: 10px;
     }
-
 }

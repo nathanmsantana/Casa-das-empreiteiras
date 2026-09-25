@@ -71,6 +71,21 @@ if (produto.estoque >= 100) {
 const botao = document.createElement("button");
 botao.textContent = "Comprar";
 
+botao.addEventListener("click", function() {
+
+    const produtoCompra = {
+        nome: produto.nome,
+        modelo: produto.modelo,
+        preco: produto.preco,
+        estoque: produto.estoque
+    };
+
+    localStorage.setItem("produtoCompra", JSON.stringify(produtoCompra));
+
+    window.location.href = "../Área de pagamento/pagamento.html";
+
+});
+
 novoProduto.appendChild(imagem);
 novoProduto.appendChild(nome);
 novoProduto.appendChild(modelo);
@@ -79,6 +94,45 @@ novoProduto.appendChild(estoque);
 novoProduto.appendChild(botao);
 
 listaProdutos.appendChild(novoProduto);
+
+}
+
+const botoesComprar = document.querySelectorAll(".produto-info button");
+
+for (let i = 0; i < botoesComprar.length; i++) {
+
+    botoesComprar[i].addEventListener("click", function() {
+
+        const produto = botoesComprar[i].parentElement;
+
+        const nomeProduto = produto.getElementsByTagName("h2")[0].textContent;
+
+        const modeloProduto = produto.getElementsByTagName("p")[0].textContent.replace("Modelo: ", "");
+
+        const precoProduto = produto.getElementsByTagName("h3")[0].textContent
+            .replace("R$ ", "")
+            .replace(",", ".");
+
+        const textoEstoque = produto.getElementsByClassName("estoque")[0].textContent;
+
+        let estoqueProduto = textoEstoque.replace("Estoque: ", "");
+
+        if (textoEstoque == "Acabou o estoque") {
+            estoqueProduto = 0;
+        }
+
+        const produtoCompra = {
+            nome: nomeProduto,
+            modelo: modeloProduto,
+            preco: precoProduto,
+            estoque: estoqueProduto
+        };
+
+        localStorage.setItem("produtoCompra", JSON.stringify(produtoCompra));
+
+        window.location.href = "../Área de pagamento/pagamento.html";
+
+    });
 
 }
 
