@@ -316,6 +316,51 @@ td {
     margin-left: 20cm;
 }
 
+.foto-admin {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20cm;
+}
+
+.menu-perfil {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 220px;
+    background: #1e2022;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.perfil-admin:hover .menu-perfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-perfil a,
+.menu-perfil button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background: #ffc300;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu-perfil a:hover,
+.menu-perfil button:hover {
+    background: #FFD000;
+}
+
 @media (max-width: 1024px) {
 
 .header {

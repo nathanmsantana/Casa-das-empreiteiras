@@ -32,6 +32,189 @@
             </div>
     </header>
 
+<section class="filtro-produtos">
+
+    <h1>Produtos da Casa das empreiteiras:</h1>
+    <div class="categoria">
+        <label for="categorias">Escolha sua categoria:</label>
+
+        <select id="categorias">
+            <option value="todos">Todos os produtos</option>
+            <option value="construcao">Construção</option>
+            <option value="eletrica">Elétrica</option>
+            <option value="hidraulica">Hidráulica</option>
+        </select>
+    </div>
+
+    <div class="pesquisa">
+        <input type="text" id="pesquisa" placeholder="Pesquisar produto">
+    </div>
+</section>
+
+<section class="area-produtos">
+
+    <div class="produtos" id="lista-produtos">
+
+        <div class="produto-info" data-categoria="construcao">
+            <img src="logo.png" alt="Cimento CP II">
+            <h2>Cimento CP II</h2>
+            <p>Modelo: 50 kg</p>
+            <h3>R$ 35,00</h3>
+
+            <div class="estoque estoque-alto">
+                Estoque: 150
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="construcao">
+            <img src="logo.png" alt="Tijolo Cerâmico">
+            <h2>Tijolo Cerâmico</h2>
+            <p>Modelo: 9 x 19 x 19 cm</p>
+            <h3>R$ 1,50</h3>
+
+            <div class="estoque estoque-alto">
+                Estoque: 300
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="construcao">
+            <img src="logo.png" alt="Argamassa">
+            <h2>Argamassa</h2>
+            <p>Modelo: 20 kg</p>
+            <h3>R$ 28,00</h3>
+
+            <div class="estoque estoque-medio">
+                Estoque: 50
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="construcao">
+            <img src="logo.png" alt="Areia Média">
+            <h2>Areia Média</h2>
+            <p>Modelo: 1 m³</p>
+            <h3>R$ 120,00</h3>
+
+            <div class="estoque estoque-alto">
+                Estoque: 150
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="eletrica">
+            <img src="logo.png" alt="Fio Elétrico">
+            <h2>Fio Elétrico</h2>
+            <p>Modelo: 2,5 mm</p>
+            <h3>R$ 42,00</h3>
+
+            <div class="estoque estoque-alto">
+                Estoque: 120
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="eletrica">
+            <img src="logo.png" alt="Disjuntor">
+            <h2>Disjuntor</h2>
+            <p>Modelo: 20 A</p>
+            <h3>R$ 32,00</h3>
+
+            <div class="estoque estoque-medio">
+                Estoque: 60
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="eletrica">
+            <img src="logo.png" alt="Tomada">
+            <h2>Tomada</h2>
+            <p>Modelo: 10 A</p>
+            <h3>R$ 12,00</h3>
+
+            <div class="estoque estoque-baixo">
+                Estoque: 20
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="eletrica">
+            <img src="logo.png" alt="Interruptor">
+            <h2>Interruptor</h2>
+            <p>Modelo: Simples</p>
+            <h3>R$ 15,00</h3>
+
+            <div class="estoque estoque-alto">
+                Estoque: 180
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="hidraulica">
+            <img src="logo.png" alt="Tubo PVC">
+            <h2>Tubo PVC</h2>
+            <p>Modelo: 25 mm</p>
+            <h3>R$ 18,90</h3>
+
+            <div class="estoque estoque-medio">
+                Estoque: 50
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="hidraulica">
+            <img src="logo.png" alt="Torneira">
+            <h2>Torneira</h2>
+            <p>Modelo: Parede</p>
+            <h3>R$ 45,00</h3>
+
+            <div class="estoque estoque-baixo">
+                Estoque: 15
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="hidraulica">
+            <img src="logo.png" alt="Registro">
+            <h2>Registro</h2>
+            <p>Modelo: 25 mm</p>
+            <h3>R$ 38,00</h3>
+
+            <div class="estoque estoque-medio">
+                Estoque: 35
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto-info" data-categoria="hidraulica">
+            <img src="logo.png" alt="Caixa d'água">
+            <h2>Caixa d'água</h2>
+            <p>Modelo: 500 litros</p>
+            <h3>R$ 450,00</h3>
+
+            <div class="estoque estoque-baixo">
+                Estoque: 10
+            </div>
+
+            <button>Comprar</button>
+        </div>
+
+    </div>
+
+</section>
+
     <div class="footer">
  <div class="footer-main">
 
@@ -40,7 +223,7 @@
       <h3>Produtos que temos</h3>
       <ul>
         <li><a href="../Área produtos/produtos.html">Materiais de Construção</a></li>
-        <li><a href="../Área produtos/produtos.html">Materiais de Elétrica</a></li>
+        <li><a href="../Área dos produtos/produtos.html">Materiais de Elétrica</a></li>
         <li><a href="../Área produtos/produtos.html">Materiais de Hidráulica</a></li>
         <li><a href="../Área produtos/produtos.html">Materiais de Acabamento</a></li>
         <li><a href="../Área produtos/produtos.html">Ferramentas</a></li>
