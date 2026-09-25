@@ -238,159 +238,152 @@ header ul, li{
 
 @media (max-width: 1024px) {
 
-    .header {
-        height: 85px;
-    }
+.header {
+    height: 80px;
+}
 
-    .header #logo {
-        width: 65px;
-        margin-left: 10px;
-    }
+.header #logo {
+    width: 65px;
+    margin-left: 10px;
+}
 
-    .header-links {
-        flex: 1;
-    }
+.header-links {
+    margin-left: 10px;
+}
 
-    header ul,
-    header li {
-        gap: 5px;
-        font-size: 13px;
-        margin-left: 5px;
-        padding: 3px;
-    }
+.header-buttons {
+    margin-left: auto;
+}
 
-    .header-buttons {
-        display: flex;
-        align-items: center;
-    }
+.header .login-button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-    .header .login-button {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+.header button {
+    width: 90px;
+    height: 38px;
+    margin-bottom: 0;
+}
 
-    .header button {
-        width: 85px;
-        height: 35px;
-        font-size: 13px;
-    }
+.admin-content {
+    width: 70%;
+    height: auto;
+    min-height: 320px;
+    margin-top: 40px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+}
 
-    .foto-admin {
-        width: 55px;
-        height: 55px;
-        margin-left: 10px;
-    }
+.admin-logo {
+    width: 130px;
+}
 
-    .admin-content {
-        width: 70%;
-        height: auto;
-        min-height: 300px;
-        margin-top: 50px;
-    }
+.admin-content button {
+    width: 90%;
+}
 
-    .admin-logo {
-        width: 130px;
-    }
+.footer {
+    width: 90%;
+    padding: 30px 5%;
+    box-sizing: border-box;
+}
 
-    .footer {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 35px;
-        margin-top: 150px;
-    }
+.footer-main {
+    gap: 50px;
+}
 
-    .footer-main {
-        gap: 50px;
-    }
+.foto-admin {
+    margin-left: auto;
+}
+
 }
 
 @media (max-width: 768px) {
 
-    .header {
-        height: auto;
-        min-height: 75px;
-        padding: 10px 0;
-        flex-wrap: wrap;
-    }
+.header {
+    height: 65px;
+}
 
-    .header #logo {
-        width: 55px;
-        margin-left: 10px;
-    }
+.header #logo {
+    width: 45px;
+    margin-left: 8px;
+}
 
-    .header-links {
-        width: auto;
-        flex: 1;
-    }
+.header-links {
+    display: none;
+}
 
-    header ul,
-    header li {
-        gap: 2px;
-        font-size: 11px;
-        margin-left: 2px;
-        padding: 2px;
-    }
+.header-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
 
-    .header-buttons {
-        display: flex;
-        gap: 5px;
-    }
+.header .login-button {
+    margin-left: 0;
+    margin-right: 0;
+}
 
-    .header .login-button {
-        margin: 0;
-    }
+.header button {
+    width: 75px;
+    height: 32px;
+    margin-bottom: 0;
+    font-size: 12px;
+}
 
-    .header button {
-        width: 65px;
-        height: 32px;
-        font-size: 11px;
-        margin: 0;
-    }
+.admin-content {
+    width: 90%;
+    height: auto;
+    min-height: 280px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
 
-    .foto-admin {
-        width: 45px;
-        height: 45px;
-        margin-left: 5px;
-    }
+.admin-logo {
+    width: 110px;
+    margin-top: 15px;
+}
 
-    .admin-content {
-        width: 85%;
-        height: auto;
-        min-height: 280px;
-        margin-top: 40px;
-        padding-bottom: 20px;
-    }
+.admin-content button {
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+}
 
-    .admin-logo {
-        width: 110px;
-        margin-top: 20px;
-    }
+.footer {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
 
-    .menu-perfil {
-        width: 200px;
-        right: 0;
-        top: 50px;
-    }
+.footer-main {
+    flex-direction: column;
+    gap: 30px;
+}
 
-    .footer {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 30px 20px;
-        margin-top: 100px;
-    }
+.footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+}
 
-    .footer-main {
-        flex-direction: column;
-        gap: 30px;
-    }
+.footer-links {
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 15px;
-    }
+.foto-admin {
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: 10px;
+}
 
-    .footer-links {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+.menu-perfil {
+    right: 10px;
+    width: 200px;
+}
+
 }

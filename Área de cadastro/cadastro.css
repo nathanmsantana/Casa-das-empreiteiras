@@ -223,267 +223,189 @@ button:hover {
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
-    body {
-        width: 100%;
-        min-width: 0;
-        overflow-x: hidden;
-        background-size: cover;
-        background-position: center top;
-    }
-
-    .header {
-        width: 100%;
-        height: 65px;
-        padding: 0 5px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 3px;
-        overflow: hidden;
-    }
-
-    .header #logo {
-        width: 42px;
-        height: auto;
-        margin-left: 0;
-        flex-shrink: 0;
-    }
-
-    .header-links {
-        flex: 1;
-        min-width: 0;
-        overflow: hidden;
-    }
-
-    .header-links ul {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .header-links li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
-        margin: 0;
-        padding: 5px 2px;
-        white-space: nowrap;
-        flex-shrink: 1;
-    }
-
-    .header-buttons {
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        flex-shrink: 0;
-    }
-
-    .header-buttons button {
-        width: 58px;
-        height: 32px;
-        margin: 0;
-        padding: 0;
-        font-size: 9px;
-        border-radius: 5px;
-        flex-shrink: 0;
-    }
-
-    .header .login-button {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .container {
-        width: 78%;
-        max-width: 320px;
-        min-width: 0;
-        height: auto;
-        min-height: 0;
-        padding: 22px 18px 25px;
-        margin: 25px auto 0;
-        box-sizing: border-box;
-        border-radius: 8px;
-    }
-
-    .container img {
-        width: 90px;
-        height: auto;
-    }
-
-    .container h1 {
-        font-size: 21px;
-        margin: 5px 0 18px;
-    }
-
-    .container label {
-        display: block;
-        width: 100%;
-        font-size: 13px;
-        margin: 9px 0 5px;
-        text-align: left;
-    }
-
-    .container input {
-        display: block;
-        width: 100%;
-        height: 38px;
-        padding: 9px;
-        margin: 0;
-        box-sizing: border-box;
-        font-size: 13px;
-    }
-
-    .container > button {
-        display: block;
-        width: 100%;
-        height: 40px;
-        margin: 18px 0 0;
-        padding: 0;
-        font-size: 14px;
-        box-sizing: border-box;
-    }
-
-    .container > li {
-        display: block;
-        width: 100%;
-        margin: 13px 0 0;
-        padding: 0;
-        text-align: center;
-        font-size: 12px;
-    }
-
-    .footer {
-        position: relative;
-        width: 100%;
-        margin: 55px 0 0;
-        padding: 25px 18px;
-        box-sizing: border-box;
-    }
-
-    .footer-main {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        margin-bottom: 25px;
-    }
-
-    .footer-column h3 {
-        font-size: 15px;
-        margin-bottom: 14px;
-    }
-
-    .footer-column ul {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-    }
-
-    .footer-column ul li {
-        margin: 0;
-        padding: 0;
-    }
-
-    .footer-column ul li a {
-        font-size: 12px;
-    }
-
-    .social-icons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .social-icons .icon {
-        font-size: 12px;
-    }
-
-    .footer-bottom {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        font-size: 10px;
-    }
-
-    .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 12px;
-    }
+.header {
+    height: 80px;
 }
 
-@media (max-width: 480px) {
+.header #logo {
+    width: 65px;
+    margin-left: 10px;
+}
 
-    .header {
-        height: 62px;
-        padding: 0 3px;
-    }
+.header-links {
+    margin-left: 10px;
+}
 
-    .header #logo {
-        width: 50px;
-    }
+.header-buttons {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .header-links li {
-        font-size: 11px;
-        padding: 4px 2px;
-    }
+.header .login-button {
+    margin: 0;
+}
 
-    .header-buttons {
-        gap: 2px;
-    }
+.header-buttons button {
+    width: 90px;
+    height: 38px;
+    margin: 0;
+}
 
-    .header-buttons button {
-        width: 53px;
-        height: 30px;
-        font-size: 11px;
-    }
+.container {
+    width: 65%;
+    height: auto;
+    min-height: 570px;
+    margin-top: 40px;
+    padding: 25px;
+    box-sizing: border-box;
+}
 
-    .container {
-        width: 80%;
-        max-width: 300px;
-        padding: 20px 16px 23px;
-        margin-top: 22px;
-    }
+.container img {
+    width: 120px;
+}
 
-    .container img {
-        width: 82px;
-    }
+.container h1 {
+    font-size: 23px;
+}
 
-    .container h1 {
-        font-size: 20px;
-        margin-bottom: 16px;
-    }
+input {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+}
 
-    .container label {
-        font-size: 12px;
-        margin: 8px 0 4px;
-    }
+.container button {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+}
 
-    .container input {
-        height: 36px;
-        font-size: 12px;
-    }
+.footer {
+    width: 90%;
+    padding: 30px 5%;
+    box-sizing: border-box;
+    margin-top: 150px;
+    position: static;
+}
 
-    .container > button {
-        height: 38px;
-        margin-top: 16px;
-        font-size: 13px;
-    }
+.footer-main {
+    gap: 50px;
+}
 
-    .container > li {
-        font-size: 11px;
-    }
+}
 
-    .footer {
-        margin-top: 45px;
-        padding: 23px 15px;
-    }
+@media (max-width: 768px) {
+
+.header {
+    height: 65px;
+}
+
+.header #logo {
+    width: 45px;
+    margin-left: 8px;
+}
+
+.header-links {
+    display: none;
+}
+
+.header-buttons {
+    margin-left: auto;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header .login-button {
+    margin: 0;
+}
+
+.header-buttons button {
+    width: 75px;
+    height: 32px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.container {
+    width: 92%;
+    height: auto;
+    min-height: 540px;
+    margin-top: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container img {
+    width: 105px;
+}
+
+.container h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+label {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.container button {
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.cadastro-button {
+    width: 100%;
+}
+
+.cadastro-button a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tenho-conta a {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.footer {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-top: 80px;
+    position: static;
+}
+
+.footer-main {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 }
