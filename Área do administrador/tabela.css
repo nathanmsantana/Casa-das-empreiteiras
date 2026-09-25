@@ -363,200 +363,268 @@ td {
 
 @media (max-width: 1024px) {
 
-.header {
-    height: 80px;
-}
+    .header {
+        height: 80px;
+    }
 
-.header #logo {
-    width: 65px;
-    margin-left: 10px;
-}
+    .header #logo {
+        width: 65px;
+        margin-left: 10px;
+    }
 
-.header-links {
-    margin-left: 10px;
-}
+    .header-links ul,
+    .header-links li {
+        margin-left: 5px;
+        font-size: 14px;
+        gap: 5px;
+    }
 
-.header-buttons {
-    margin-left: auto;
-}
+    .header-buttons {
+        margin-left: auto;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header .login-button {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    .header .login-button {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-.header button {
-    width: 90px;
-    height: 38px;
-    margin-bottom: 0;
-}
+    .header button {
+        width: 85px;
+        height: 36px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 13px;
+    }
 
-.tabela-ADM {
-    width: 90%;
-    margin: 30px auto;
-    padding: 25px;
-    box-sizing: border-box;
-}
+    .foto-admin {
+        width: 55px;
+        height: 55px;
+        margin-left: 0;
+    }
 
-.campos {
-    grid-template-columns: repeat(2, 1fr);
-}
+    .tabela-ADM {
+        width: 90%;
+        padding: 25px;
+        box-sizing: border-box;
+    }
 
-#nome {
-    grid-column: 1 / 3;
-}
+    .campos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-table {
-    width: 100%;
-    font-size: 14px;
-}
+    #nome {
+        grid-column: 1 / 3;
+    }
 
-th,
-td {
-    padding: 10px;
-}
+    table {
+        width: 100%;
+    }
 
-.editar,
-.excluir {
-    padding: 7px 10px;
-}
+    th,
+    td {
+        padding: 8px;
+        font-size: 12px;
+    }
 
-.footer {
-    width: 90%;
-    padding: 30px 5%;
-    box-sizing: border-box;
-}
+    .footer {
+        width: 90%;
+        padding: 30px 5%;
+        box-sizing: border-box;
+    }
 
-.footer-main {
-    gap: 50px;
-}
-
-.foto-admin {
-    margin-left: auto;
-}
+    .footer-main {
+        gap: 50px;
+    }
 
 }
 
 @media (max-width: 768px) {
 
-.header {
-    height: 65px;
-}
+    .header {
+        width: 100%;
+        height: 105px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 55px 50px;
+    }
 
-.header #logo {
-    width: 45px;
-    margin-left: 8px;
-}
+    .header > a {
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-.header-links {
-    display: none;
-}
+    .header #logo {
+        width: 45px;
+        margin-left: 10px;
+    }
 
-.header-buttons {
-    margin-left: auto;
-    display: flex;
-    gap: 5px;
-}
+    .header-buttons {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header .login-button {
-    margin-left: 0;
-    margin-right: 0;
-}
+    .header-buttons #areaUsuario {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header button {
-    width: 75px;
-    height: 32px;
-    margin-bottom: 0;
-    font-size: 12px;
-}
+    .header .login-button {
+        margin: 0;
+    }
 
-.tabela-ADM {
-    width: 95%;
-    margin: 25px auto;
-    padding: 15px;
-    box-sizing: border-box;
-}
+    .header button {
+        width: 75px;
+        height: 32px;
+        margin: 0;
+        font-size: 11px;
+    }
 
-.tabela-ADM h2 {
-    font-size: 23px;
-    margin-bottom: 20px;
-}
+    .header-links {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        width: 100%;
+    }
 
-.campos {
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
+    .header-links ul {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
 
-#nome {
-    grid-column: auto;
-}
+    .header-links li {
+        margin: 0;
+        padding: 5px;
+        font-size: 12px;
+    }
 
-.campos input,
-.campos select {
-    padding: 10px;
-    font-size: 14px;
-}
+    .foto-admin {
+        width: 45px;
+        height: 45px;
+        margin: 0;
+    }
 
-#botao {
-    padding: 12px;
-    font-size: 14px;
-}
+    .menu-perfil {
+        top: 50px;
+        right: 5px;
+        width: 200px;
+    }
 
-#quantidade {
-    font-size: 14px;
-}
+    .tabela-ADM {
+        width: 92%;
+        padding: 20px;
+        margin: 30px auto;
+        box-sizing: border-box;
+    }
 
-table {
-    width: 100%;
-    font-size: 10px;
-    table-layout: fixed;
-}
+    .tabela-ADM h2 {
+        font-size: 22px;
+    }
 
-th,
-td {
-    padding: 5px;
-    word-break: break-word;
-}
+    .campos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
 
-.editar,
-.excluir {
-    padding: 5px 6px;
-    font-size: 9px;
-    margin: 1px;
-}
+    #nome {
+        grid-column: 1;
+    }
 
-.footer {
-    width: 100%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    margin-top: 100px;
-}
+    .campos input,
+    .campos select {
+        width: 100%;
+    }
 
-.footer-main {
-    flex-direction: column;
-    gap: 30px;
-}
+    #botao {
+        width: 100%;
+    }
 
-.footer-bottom {
-    flex-direction: column;
-    gap: 15px;
-}
+    #quantidade {
+        font-size: 14px;
+    }
 
-.footer-links {
-    flex-wrap: wrap;
-    gap: 10px;
-}
+    table {
+        width: 100%;
+        table-layout: fixed;
+    }
 
-.foto-admin {
-    width: 50px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: 10px;
-}
+    th,
+    td {
+        padding: 6px 3px;
+        font-size: 10px;
+        word-break: break-word;
+    }
 
-.menu-perfil {
-    right: 10px;
-    width: 200px;
-}
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 20%;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        width: 16%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 16%;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+        width: 13%;
+    }
+
+    th:nth-child(5),
+    td:nth-child(5) {
+        width: 13%;
+    }
+
+    th:nth-child(6),
+    td:nth-child(6) {
+        width: 22%;
+    }
+
+    .editar,
+    .excluir {
+        width: 100%;
+        padding: 5px 2px;
+        font-size: 9px;
+        margin: 1px 0;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        margin-top: 100px;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
 }

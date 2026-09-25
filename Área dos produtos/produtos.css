@@ -408,8 +408,11 @@ background-color: #FFC300;
         margin-left: 10px;
     }
 
-    .header-links {
+    .header-links ul,
+    .header-links li {
         margin-left: 5px;
+        font-size: 14px;
+        gap: 5px;
     }
 
     .header-buttons {
@@ -417,7 +420,7 @@ background-color: #FFC300;
         margin-right: 10px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 5px;
     }
 
     .header .login-button {
@@ -427,9 +430,10 @@ background-color: #FFC300;
 
     .header button {
         width: 85px;
-        height: 38px;
+        height: 36px;
+        margin-top: 0;
         margin-bottom: 0;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .foto-admin {
@@ -440,7 +444,6 @@ background-color: #FFC300;
 
     .filtro-produtos {
         width: 90%;
-        padding: 15px;
         gap: 15px;
     }
 
@@ -450,10 +453,6 @@ background-color: #FFC300;
 
     .pesquisa {
         width: 250px;
-    }
-
-    .area-produtos {
-        width: 90%;
     }
 
     .produtos {
@@ -477,72 +476,103 @@ background-color: #FFC300;
 
 }
 
-
 @media (max-width: 768px) {
 
     .header {
-        height: 65px;
+        width: 100%;
+        height: 105px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 55px 50px;
+    }
+
+    .header > a {
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .header #logo {
         width: 45px;
-        margin-left: 8px;
-    }
-
-    .header-links {
-        display: none;
+        margin-left: 10px;
     }
 
     .header-buttons {
-        margin-left: auto;
-        margin-right: 8px;
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .header-buttons #areaUsuario {
         display: flex;
         align-items: center;
         gap: 5px;
     }
 
     .header .login-button {
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
     }
 
     .header button {
         width: 75px;
         height: 32px;
-        margin-bottom: 0;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .header-links {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .header-links ul {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-links li {
+        margin: 0;
+        padding: 5px;
         font-size: 12px;
     }
 
     .foto-admin {
         width: 45px;
         height: 45px;
-        margin-left: 0;
-        margin-right: 5px;
+        margin: 0;
     }
 
     .menu-perfil {
-        top: 55px;
+        top: 50px;
         right: 5px;
         width: 200px;
     }
 
     .filtro-produtos {
         width: 92%;
+        margin: 25px auto 20px;
+        padding: 15px;
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
-        padding: 15px;
-        margin-top: 25px;
+    }
+
+    .filtro-produtos h1 {
+        font-size: 24px;
     }
 
     .categoria {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
-    }
-
-    .categoria label {
-        font-size: 14px;
     }
 
     .categoria select {

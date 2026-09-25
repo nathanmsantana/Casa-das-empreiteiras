@@ -388,224 +388,223 @@ header ul, li{
 }
 
 @media (max-width: 1024px) {
+    .header {
+        height: 80px;
+    }
 
-.header {
-    height: 80px;
-}
+    .header #logo {
+        width: 65px;
+        margin-left: 10px;
+    }
 
-.header #logo {
-    width: 65px;
-    margin-left: 10px;
-}
+    .header-links ul,
+    .header-links li {
+        margin-left: 5px;
+        font-size: 14px;
+        gap: 5px;
+    }
 
-.header-links {
-    margin-left: 10px;
-}
+    .header-buttons {
+        margin-left: auto;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header-buttons {
-    margin-left: auto;
-}
+    .header .login-button {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-.header .login-button {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    .header button {
+        width: 85px;
+        height: 36px;
+        margin: 0;
+        font-size: 13px;
+    }
 
-.header button {
-    width: 90px;
-    height: 38px;
-    margin-top: 0;
-}
+    .foto-admin {
+        width: 55px;
+        height: 55px;
+        margin-left: 0;
+    }
 
-.banner {
-    margin-top: 80px;
-    height: 450px;
-}
+    .banner {
+        margin-top: 80px;
+    }
 
-.banner-conteudo {
-    left: 5%;
-}
+    .historia {
+        width: 90%;
+        gap: 40px;
+    }
 
-.banner h1 {
-    font-size: 42px;
-}
-
-.banner h1 span {
-    font-size: 32px;
-}
-
-.banner p {
-    font-size: 18px;
-}
-
-.historia {
-    gap: 40px;
-    width: 90%;
-}
-
-.historia-texto {
-    width: 50%;
-}
-
-.historia-imagem {
-    width: 50%;
-}
-
-.historia-imagem img {
-    height: 400px;
-}
-
-.footer {
-    width: 90%;
-    padding: 30px 5%;
-}
-
-.footer-main {
-    gap: 50px;
-}
-
-.foto-admin {
-    margin-left: auto;
-}
-
+    .footer {
+        width: 90%;
+        padding: 30px 5%;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 768px) {
+    .header {
+        height: 105px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 55px 50px;
+    }
 
-.header {
-    height: 65px;
-}
+    .header > a {
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-.header #logo {
-    width: 45px;
-    margin-left: 8px;
-}
+    .header #logo {
+        width: 45px;
+        margin-left: 10px;
+    }
 
-.header-links {
-    display: none;
-}
+    .header-buttons {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header-buttons {
-    margin-left: auto;
-    display: flex;
-    gap: 5px;
-}
+    .header-buttons #areaUsuario {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
 
-.header .login-button {
-    margin-left: 0;
-    margin-right: 0;
-}
+    .header .login-button {
+        margin: 0;
+    }
 
-.header button {
-    width: 75px;
-    height: 32px;
-    margin-top: 0;
-    font-size: 12px;
-}
+    .header button {
+        width: 75px;
+        height: 32px;
+        margin: 0;
+        font-size: 11px;
+    }
 
-.banner {
-    margin-top: 65px;
-    height: 400px;
-}
+    .header-links {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        width: 100%;
+    }
 
-.banner-conteudo {
-    left: 7%;
-    right: 7%;
-}
+    .header-links ul {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
 
-.banner h1 {
-    font-size: 32px;
-}
+    .header-links li {
+        margin: 0;
+        padding: 5px;
+        font-size: 12px;
+    }
 
-.banner h1 span {
-    font-size: 24px;
-}
+    .foto-admin {
+        width: 45px;
+        height: 45px;
+        margin: 0;
+    }
 
-.banner p {
-    font-size: 16px;
-}
+    .menu-perfil {
+        top: 50px;
+        right: 5px;
+        width: 200px;
+    }
 
-.banner button {
-    padding: 12px 25px;
-    font-size: 16px;
-}
+    .banner {
+        margin-top: 105px;
+        height: 400px;
+    }
 
-.categorias {
-    height: auto;
-    flex-direction: column;
-    padding: 10px 0;
-}
+    .banner-conteudo {
+        left: 7%;
+        right: 7%;
+    }
 
-.categoria {
-    width: 90%;
-    height: 55px;
-    border-right: none;
-    border-bottom: 1px solid #555;
-}
+    .banner h1 {
+        font-size: 32px;
+    }
 
-.categoria:last-child {
-    border-bottom: none;
-}
+    .banner h1 span {
+        font-size: 24px;
+    }
 
-.historia {
-    flex-direction: column;
-    gap: 30px;
-    width: 90%;
-    margin: 60px auto;
-}
+    .banner p {
+        font-size: 16px;
+    }
 
-.historia-texto {
-    width: 100%;
-}
+    .categorias {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 0;
+    }
 
-.historia-texto h2 {
-    font-size: 30px;
-}
+    .categoria {
+        width: 90%;
+        border-right: none;
+        border-bottom: 1px solid #555;
+    }
 
-.historia-texto p {
-    font-size: 16px;
-}
+    .categoria:last-child {
+        border-bottom: none;
+    }
 
-.historia-imagem {
-    width: 100%;
-}
+    .historia {
+        width: 90%;
+        margin: 60px auto;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.historia-imagem img {
-    height: 300px;
-}
+    .historia-texto,
+    .historia-imagem {
+        width: 100%;
+    }
 
-.footer {
-    width: 100%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    position: relative;
-}
+    .historia-texto h2 {
+        font-size: 30px;
+    }
 
-.footer-main {
-    flex-direction: column;
-    gap: 30px;
-}
+    .historia-texto p {
+        font-size: 16px;
+    }
 
-.footer-bottom {
-    flex-direction: column;
-    gap: 15px;
-}
+    .historia-imagem img {
+        height: 300px;
+    }
 
-.footer-links {
-    flex-wrap: wrap;
-    gap: 10px;
-}
+    .footer {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
 
-.foto-admin {
-    width: 50px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: 10px;
-}
+    .footer-main {
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.menu-perfil {
-    right: 10px;
-    width: 200px;
-}
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
 
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
